@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
 
-const Home = ({ id, go, fetchedUser }) => (
+const Home = ({ id, go, fetchedUser, routes }) => (
 	<Panel id={id}>
 		<PanelHeader>Example</PanelHeader>
 		{fetchedUser &&
@@ -18,8 +18,8 @@ const Home = ({ id, go, fetchedUser }) => (
 
 		<Group header={<Header mode="secondary">Navigation Example</Header>}>
 			<Div>
-				<Button stretched size="l" mode="secondary" onClick={go} data-to="persik">
-					Show me the Persik, please
+				<Button stretched size="l" mode="secondary" onClick={()=>go(routes.QUESTION1)}>
+					Начать тест
 				</Button>
 			</Div>
 		</Group>
