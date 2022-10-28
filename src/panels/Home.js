@@ -1,42 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@vkontakte/vkui';
+import {Panel, Group, Div} from '@vkontakte/vkui';
+import './Home.css';
+import Directions from "../img/directions.svg"
+import art from "../img/14169919.jpg"
 
-const Home = ({ id, go, fetchedUser, routes }) => (
-	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group header={<Header mode="secondary">User Data Fetched with VK Bridge</Header>}>
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell>
-		</Group>}
 
-		<Group header={<Header mode="secondary">Navigation Example</Header>}>
-			<Div>
-				<Button stretched size="l" mode="secondary" onClick={()=>go(routes.QUESTION1)}>
-					Начать тест
-				</Button>
-			</Div>
-		</Group>
-	</Panel>
+const Home = ({id, go, routes}) => (
+    <Panel id={id}>
+        {/*<Group >*/}
+        {/*<PanelHeader separator={false}></PanelHeader>*/}
+        <Group>
+            {/*<div className='poster'></div>*/}
+            <img src={art} width='780'/>
+            <h1>Подберём направление для тебя</h1>
+            <div className="directions_icons"><img alt="directions" src={Directions}/></div>
+            <Div>
+    <div className='directions_text'>Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.</div>
+            </Div>
+            <Div>
+                <div className='button-start' onClick={() => go(routes.QUESTION1)}>
+                    Начать тест
+                </div>
+            </Div>
+        </Group>
+    </Panel>
 );
 
 Home.propTypes = {
-	id: PropTypes.string.isRequired,
-	go: PropTypes.func.isRequired,
-	fetchedUser: PropTypes.shape({
-		photo_200: PropTypes.string,
-		first_name: PropTypes.string,
-		last_name: PropTypes.string,
-		city: PropTypes.shape({
-			title: PropTypes.string,
-		}),
-	}),
+    id: PropTypes.string.isRequired,
+    go: PropTypes.func.isRequired,
+    fetchedUser: PropTypes.shape({
+        photo_200: PropTypes.string,
+        first_name: PropTypes.string,
+        last_name: PropTypes.string,
+        city: PropTypes.shape({
+            title: PropTypes.string,
+        }),
+    }),
 };
 
 export default Home;
