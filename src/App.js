@@ -14,11 +14,13 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Home from './panels/Home';
 import Persik from './panels/Persik';
 import Question1 from "./panels/Question1";
+import Result from "./panels/Result";
 
 const ROUTES = {
 	HOME: 'home',
 	QUESTION1: 'question1',
 	QUESTION2: 'question2',
+	RESULT: 'result',
 }
 
 const App = () => {
@@ -59,6 +61,7 @@ const App = () => {
 								<Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} routes={ROUTES}/>
 								<Persik id='persik' go={go} />
 								<Question1 id={ROUTES.QUESTION1} go={go} routes={ROUTES}/>
+								<Result id={ROUTES.RESULT} go={go} routes={ROUTES}/>
 							</View>
 						</SplitCol>
 					</SplitLayout>

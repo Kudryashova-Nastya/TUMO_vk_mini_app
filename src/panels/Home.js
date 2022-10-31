@@ -4,20 +4,23 @@ import PropTypes from 'prop-types';
 import {Panel, Group, Div} from '@vkontakte/vkui';
 import './Home.css';
 import Directions from "../img/directions.svg"
-import art from "../img/14169919.jpg"
+import poster from "../img/14169919.jpg"
 
 
 const Home = ({id, go, routes}) => (
     <Panel id={id}>
-        {/*<Group >*/}
         {/*<PanelHeader separator={false}></PanelHeader>*/}
         <Group>
-            {/*<div className='poster'></div>*/}
-            <img src={art} width='780'/>
+            <div className='poster'></div>
+            {/*<img src={poster} height='400'/>*/}
             <h1>Подберём направление для тебя</h1>
             <div className="directions_icons"><img alt="directions" src={Directions}/></div>
             <Div>
-    <div className='directions_text'>Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.</div>
+                <div className='directions_text'>Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.
+                    Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem
+                    ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom
+                    asdf feqq.
+                </div>
             </Div>
             <Div>
                 <div className='button-start' onClick={() => go(routes.QUESTION1)}>

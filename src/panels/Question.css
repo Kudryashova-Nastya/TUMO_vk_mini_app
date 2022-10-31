@@ -1,6 +1,68 @@
-.Persik {
-  display: block;
-  width: 30%;
-  max-width: 240px;
-  margin: 20px auto;
+h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 120%;
+  font-size: 24px;
+}
+
+
+.vkuiGroup--card > .vkuiGroup__inner {
+  box-shadow: none;
+}
+
+.test-group {
+  padding: 0 7vw;
+}
+
+.variant {
+  line-height: 240%;
+}
+
+.vkuiRadio--android {
+   padding: 0;
+}
+
+.button-next {
+  background-color: #6F5FFE;
+  transition: background-color .15s ease-in-out;
+  align-items: center;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  line-height: 1;
+  outline: 0;
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  will-change: background-color;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 20px;
+  margin-top: 8vh;
+}
+
+.button-next:hover {
+  background-color: #5b49fd;
+}
+
+.vkuiRadio__input:checked~.vkuiRadio__container .vkuiRadio__icon {
+  border-color: #6F5FFE;
+}
+
+.vkuiRadio__input:checked~.vkuiRadio__container .vkuiRadio__icon::after {
+  background-color: #6F5FFE;
+}
+
+.vkuiRadio__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+.vkuiPanelHeader--android .vkuiPanelHeader__content-in {
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
 }
