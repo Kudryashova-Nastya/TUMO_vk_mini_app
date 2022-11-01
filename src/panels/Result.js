@@ -50,11 +50,11 @@ const Result = ({id, go, routes}) => (
             <Div>
                 <h3>TUMO</h3>
                 <div className="result_text"><span className="organization">TUMO MOSCOW</span> — это международная школа
-                    креативных технологий, где подростки
-                    12-18 лет раскрывают свой потенциал и становятся лидерами завтрашнего дня.
+                    креативных технологий, где подростки 12-18 лет раскрывают свой потенциал и становятся лидерами
+                    завтрашнего дня.
                 </div>
                 <a className='button-link' href="https://tumo.moscow/programming" target="_blank" rel="noreferrer">
-                    Записаться на пробное занятие
+                    Записаться на бесплатное пробное занятие
                 </a>
             </Div>
             <Div>
