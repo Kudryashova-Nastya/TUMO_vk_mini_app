@@ -1,7 +1,10 @@
 .direction_text {
-    padding: 2vw 5vw;
-    border: 2px solid #6F5FFE;
+    padding: 3vw 5vw;
+    /*border: 2px solid #6F5FFE;*/
     border-radius: 20px;
+    margin: 3vw 0;
+    background-color: black;
+    color: white;
 }
 
 .result_container {
@@ -14,28 +17,123 @@
     margin-top: -15px;
 }
 
-.statistics {
+.result_text {
     margin-left: 5vw;
+    margin-right: 3vw;
+}
+
+.statistics {
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .button-link {
     background-color: #F50106;
     transition: background-color .15s ease-in-out;
-    border-radius: 10px;
+    border-radius: 25px;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    line-height: 1;
+    line-height: 1.2;
     outline: 0;
     text-align: center;
     white-space: nowrap;
     color: #fff;
     padding: 15px 0;
-    font-size: 20px;
-    margin-top: 8vh;
+    font-size: 18px;
+    margin: 5vh 4vw 0;
     text-decoration: none;
 }
 
 .button-link:hover {
     background-color: #e30206;
+}
+
+h3 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.cards-container {
+    display: -webkit-flex;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 3vw 0 0;
+    /*gap: 20px;*/
+}
+
+.card__center {
+    margin: 4vw auto auto;
+}
+
+.cards__another {
+    gap: 4vw;
+}
+
+.card {
+    width: 40vw;
+    /*padding: 2vw 5vw;*/
+    border: 2px solid #6F5FFE;
+    border-radius: 25px;
+}
+
+.card-header {
+    background-color: #6F5FFE;
+    color: white;
+    padding: 2vw 3vw;
+    border: 2px solid #6F5FFE;
+    border-radius: 25px;
+    margin: -2px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.card-body {
+    padding: 2vw 3vw;
+}
+
+.organization {
+    color: #F50106;
+    font-weight: 600;
+}
+
+.button-restart {
+    color: #6F5FFE;
+    font-weight: 600;
+    font-size: 21px;
+    text-align: center;
+    margin: 5vw;
+    cursor: pointer;
+    transition: .15s ease-in-out;
+    height: 30px;
+}
+
+.button-restart:hover {
+    color: #5b49fd;
+    font-size: 22px;
+    transition: .15s ease-in-out;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    padding: 3vw 5vw;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+.footer_column {
+    line-height: 1.5;
+}
+
+.footer_column img {
+    height: 20px;
 }
