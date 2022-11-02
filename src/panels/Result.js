@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import {Div, Group, Panel} from '@vkontakte/vkui';
 
 import './Result.css';
+import '../data/directions'
+
+const DIRECTION = Programming
 
 const Result = ({id, go, routes}) => (
     <Panel id={id}>
@@ -21,7 +24,7 @@ const Result = ({id, go, routes}) => (
             <Div>
                 <div className="result_text statistics">По статистике с данным направлением чаще всего выбирают:</div>
                 <div className='cards-container'>
-                    <div className='card'>
+                    <div className='card card__top'>
                         <div className="card-header">🎮 &nbsp;Разработка игр</div>
                         <div className="card-body">
                             Многие любят играть в компьютерные игры, но еще интереснее – их
@@ -29,7 +32,7 @@ const Result = ({id, go, routes}) => (
                             нарисуешь и выпустишь в жизнь персонажей.
                         </div>
                     </div>
-                    <div className='card'>
+                    <div className='card card__top'>
                         <div className="card-header">🎵 &nbsp;Создание музыки</div>
                         <div className="card-body">
                             Этот курс для тех, кто хочет смело экспериментировать и создавать музыку с нуля: от
@@ -37,7 +40,7 @@ const Result = ({id, go, routes}) => (
                             музыкальной композиции, саунд-дизайн и синтез звука.
                         </div>
                     </div>
-                    <div className='card card__center'>
+                    <div className='card card__top'>
                         <div className="card-header">🧊 &nbsp;3D-моделирование</div>
                         <div className="card-body">
                             На этом курсе ты можешь почувствовать себя скульптором или архитектором. Ты освоишь одну из
@@ -101,15 +104,16 @@ const Result = ({id, go, routes}) => (
 
         </Group>
         <footer>
-        <div className="footer_column">+7 (495) 646-02-73<br/>
-            info@tumo.moscow
-        </div>
-        <div className="footer_column"><img alt="Лого TUMO" src="https://thumb.tildacdn.com/tild6664-6331-4334-a161-366530316463/-/cover/320x40/center/center/-/format/webp/11799789611339936983.png"/>
-        </div>
-        <div className="footer_column">123100, Россия, Москва,<br/>
-            ул. Мантулинская, 7 стр. 3
-        </div>
-    </footer>
+            <div className="footer_column">+7 (495) 646-02-73<br/>
+                info@tumo.moscow
+            </div>
+            <div className="footer_column"><img alt="Лого TUMO"
+                                                src="https://thumb.tildacdn.com/tild6664-6331-4334-a161-366530316463/-/cover/320x40/center/center/-/format/webp/11799789611339936983.png"/>
+            </div>
+            <div className="footer_column">123100, Россия, Москва,<br/>
+                ул. Мантулинская, 7 стр. 3
+            </div>
+        </footer>
     </Panel>
 );
 
