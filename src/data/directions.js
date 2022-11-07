@@ -1,5 +1,5 @@
 // направления
-const Programming = {
+export const Programming = {
     name: "Программирование",
     full: "Этот курс для тех, кто хочет научиться программировать с нуля, прокачать\n" +
         "свои аналитические способности и познакомиться с миром IT. Ты освоишь язык JavaScript, который\n" +
@@ -10,7 +10,7 @@ const Programming = {
     link: "https://tumo.moscow/programming",
     emoji: "👩‍💻"
 }
-const D3 = {
+export const D3 = {
     name: "3D-моделирование",
     full: "",
     short: "На этом курсе ты можешь почувствовать себя скульптором или архитектором. Ты освоишь одну из\n" +
@@ -19,7 +19,7 @@ const D3 = {
     link: "https://tumo.moscow/3d",
     emoji: "🧊"
 }
-const Animation = {
+export const Animation = {
     name: "Анимация",
     full: "",
     short: "Этот курс для тех, кто любит рисовать, но хочет чего-то большего. Ты станешь режиссером и\n" +
@@ -29,7 +29,7 @@ const Animation = {
     link: "https://tumo.moscow/animation",
     emoji: "🧩"
 }
-const Movie = {
+export const Movie = {
     name: "Кинопроизводство",
     full: "",
     short: "Этот курс для тех, кто мечтает сделать свое видео и с первых же секунд захватить зрителя. В\n" +
@@ -38,7 +38,7 @@ const Movie = {
     link: "https://tumo.moscow/movie",
     emoji: "🎬"
 }
-const Design = {
+export const Design = {
     name: "Графический дизайн",
     full: "",
     short: "Этот курс для тех, кто хочет научиться выражать свои идеи визуальными средствами. На\n" +
@@ -47,7 +47,7 @@ const Design = {
     link: "https://tumo.moscow/graphicdesign",
     emoji: "🎨"
 }
-const Gamedev = {
+export const Gamedev = {
     name: "Разработка игр",
     full: "",
     short: "Многие любят играть в компьютерные игры, но еще интереснее – их\n" +
@@ -56,7 +56,7 @@ const Gamedev = {
     link: "https://tumo.moscow/gamedesign",
     emoji: "🎮"
 }
-const Robots = {
+export const Robots = {
     name: "Робототехника",
     full: "Этот курс для тех, кто хочет разобраться: как устроены умные машины и на что они способны.\n" +
         "Ты построишь робота из Lego Mindstorms, заставишь его выполнять команды, а потом еще и\n" +
@@ -67,7 +67,7 @@ const Robots = {
     link: "https://tumo.moscow/robotics",
     emoji: "🤖"
 }
-const Music = {
+export const Music = {
     name: "Создание музыки",
     full: "",
     short: "Этот курс для тех, кто хочет смело экспериментировать и создавать музыку с нуля: от\n" +
@@ -79,11 +79,11 @@ const Music = {
 
 
 // паки рекомендаций для направлений
-const Programming_res = [Gamedev, Music, D3, Robots, Design, Movie, Animation]
-const D3_res = [Music, Gamedev, Design, Animation, Programming, Movie, Robots]
-const Animation_res = [Design, Music, D3, Gamedev, Movie, Programming, Robots]
-const Movie_res = [Music, Design, Gamedev, Animation, D3, Programming, Robots]
-const Design_res = [Music, D3, Animation, Gamedev, Movie, Programming, Robots]
-const Gamedev_res = [Music, D3, Programming, Design, Animation, Movie, Robots]
-const Robots_res = [Gamedev, Programming, D3, Music, Design, Movie, Animation]
-const Music_res = [Gamedev, Design, D3, Animation, Movie, Programming, Robots]
+export const Programming_res = [Gamedev, Music, D3, Robots, Design, Movie, Animation]
+export const D3_res = [Music, Gamedev, Design, Animation, Programming, Movie, Robots]
+export const Animation_res = [Design, Music, D3, Gamedev, Movie, Programming, Robots]
+export const Movie_res = [Music, Design, Gamedev, Animation, D3, Programming, Robots]
+export const Design_res = [Music, D3, Animation, Gamedev, Movie, Programming, Robots]
+export const Gamedev_res = [Music, D3, Programming, Design, Animation, Movie, Robots]
+export const Robots_res = [Gamedev, Programming, D3, Music, Design, Movie, Animation]
+export const Music_res = [Gamedev, Design, D3, Animation, Movie, Programming, Robots]
