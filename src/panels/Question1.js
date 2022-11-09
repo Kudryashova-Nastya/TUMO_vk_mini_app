@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Group, Panel, PanelHeader, PanelHeaderBack, Radio, RadioGroup} from '@vkontakte/vkui';
 
 import './Question.css';
+import * as data from '../data/questions'
 
 const Question1 = ({id, go, routes}) => (
     <Panel id={id} >
@@ -14,22 +15,15 @@ const Question1 = ({id, go, routes}) => (
         </PanelHeader>
         <Group className="test-group">
             <h2>
-                Если сегодня можно делать всё, что угодно, то чем займется ваш ребенок?
+                {data.Q1.question}
             </h2>
             <div className='variants'>
                 <RadioGroup>
-                    <Radio  name="q1" value="a">
-                        <span className="variant">Включит компьютер и не выключит ближайшие сутки</span>
-                    </Radio>
-                    <Radio name="q1" value="b">
-                        <span className="variant">Пойдёт гулять на целый день</span>
-                    </Radio>
-                    <Radio name="q1" value="c">
-                        <span className="variant">Сделает что-то руками: соберёт, смоделирует или нарисует</span>
-                    </Radio>
-                    <Radio name="q1" value="d">
-                        <span className="variant">Будет читать книги — художественные и не только</span>
-                    </Radio>
+                    {data.Q1.answers.map((p) => (
+                        <Radio  name="q1" value={p.value}>
+                            <span className="variant">{p.text}</span>
+                        </Radio>
+                    ))}
                 </RadioGroup>
                 <div className='button-next' onClick={() => go(routes.RESULT)}>
                     Далее

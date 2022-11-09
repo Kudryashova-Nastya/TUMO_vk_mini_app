@@ -1,8 +1,8 @@
 h2 {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  line-height: 120%;
-  font-size: 24px;
+  line-height: 140%;
+  font-size: 22px;
 }
 
 
@@ -16,6 +16,12 @@ h2 {
 
 .variant {
   line-height: 240%;
+}
+
+@media screen and (max-width: 700px) {
+  .variant {
+    line-height: 180%;
+  }
 }
 
 .vkuiRadio--android {
@@ -60,6 +66,12 @@ h2 {
   align-items: center;
   justify-content: flex-start;
   margin-left: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .vkuiRadio__container {
+    margin-left: -8px;
+  }
 }
 
 .vkuiPanelHeader--android .vkuiPanelHeader__content-in {
