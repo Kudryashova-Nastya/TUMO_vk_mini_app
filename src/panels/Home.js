@@ -3,8 +3,17 @@ import PropTypes from 'prop-types';
 
 import {Panel, Group, Div} from '@vkontakte/vkui';
 import './Home.css';
-import Directions from "../img/directions.svg"
-import poster from "../img/14169919.jpg"
+import Animation_logo from "../img/Анимация.svg"
+import Gamedev_logo from "../img/Геймдев.svg"
+import Design_logo from "../img/Дизайн.svg"
+import Movie_logo from "../img/Кино.svg"
+import Music_logo from "../img/Музыка.svg"
+import Prog_logo from "../img/Программирование.svg"
+import Robo_logo from "../img/Робототехника.svg"
+import D3_logo from "../img/3D.svg"
+
+
+// import poster from "../img/14169919.jpg"
 
 
 const Home = ({id, go, routes}) => (
@@ -13,13 +22,21 @@ const Home = ({id, go, routes}) => (
         <Group>
             <div className='poster'></div>
             {/*<img src={poster} height='400'/>*/}
-            <h1>Подберём направление для тебя</h1>
-            <div className="directions_icons"><img alt="directions" src={Directions}/></div>
+            <h1>Узнайте, какая креативная профессия подходит вашему ребенку</h1>
+            <div className="directions_icons">
+                <img alt="Animation_logo" src={Animation_logo}/>
+                <img alt="Gamedev_logo" src={Gamedev_logo}/>
+                <img alt="Design_logo" src={Design_logo}/>
+                <img alt="Movie_logo" src={Movie_logo}/>
+                <img alt="Music_logo" src={Music_logo}/>
+                <img alt="Prog_logo" src={Prog_logo}/>
+                <img alt="Robo_logo" src={Robo_logo}/>
+                <img alt="D3_logo" src={D3_logo}/>
+            </div>
             <Div>
-                <div className='directions_text'>Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.
-                    Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem
-                    ipsom asdf feqq. Lorem ipsom asdf feqq. Lorem ipsom asdf feqq.Lorem ipsom asdf feqq. Lorem ipsom
-                    asdf feqq.
+                <div className='directions_text'>
+                    Бесплатный тест для родителей подростков, который подскажет, какое увлечение ребенка может перерасти
+                    в полезные навыки для его будущего
                 </div>
             </Div>
             <Div>
@@ -34,14 +51,6 @@ const Home = ({id, go, routes}) => (
 Home.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
-    fetchedUser: PropTypes.shape({
-        photo_200: PropTypes.string,
-        first_name: PropTypes.string,
-        last_name: PropTypes.string,
-        city: PropTypes.shape({
-            title: PropTypes.string,
-        }),
-    }),
 };
 
 export default Home;

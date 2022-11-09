@@ -10,7 +10,7 @@ const Question1 = ({id, go, routes}) => (
         <PanelHeader separator={false}
             left={<PanelHeaderBack onClick={() => go(routes.HOME)} data-to="home"/>}
         >
-            Вопрос 1 из 6
+            Вопрос 1 из 10
         </PanelHeader>
         <Group className="test-group">
             <h2>
