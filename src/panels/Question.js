@@ -4,38 +4,43 @@ import PropTypes from 'prop-types';
 import {Group, Panel, PanelHeader, PanelHeaderBack, Radio, RadioGroup} from '@vkontakte/vkui';
 
 import './Question.css';
-import * as data from '../data/questions'
 
-const Question1 = ({id, go, routes}) => (
-    <Panel id={id} >
+
+const Question = ({id, next, prev, number, go, q, answer, setAnswer}) => (
+    <Panel id={id}>
         <PanelHeader separator={false}
-            left={<PanelHeaderBack onClick={() => go(routes.HOME)} data-to="home"/>}
+                     left={<PanelHeaderBack onClick={() => go(prev)} data-to="home"/>}
         >
-            Вопрос 1 из 10
+            Вопрос {number} из 7
         </PanelHeader>
         <Group className="test-group">
             <h2>
-                {data.Q1.question}
+                {q.question}
             </h2>
             <div className='variants'>
                 <RadioGroup>
-                    {data.Q1.answers.map((p) => (
-                        <Radio  name="q1" value={p.value}>
+                    {q.answers.map((p) => (
+                        <Radio onClick={() => setAnswer(p.value)} name="answer"
+                               value={p.value} key={p.value} defaultChecked={answer === p.value}>
                             <span className="variant">{p.text}</span>
                         </Radio>
                     ))}
                 </RadioGroup>
-                <div className='button-next' onClick={() => go(routes.RESULT)}>
+                {answer ? <div className='button-next' onClick={() => go(next)}>
                     Далее
+                </div>: <div className='button-next'>
+                    неДалее
                 </div>
+                }
+
             </div>
         </Group>
     </Panel>
 );
 
-Question1.propTypes = {
+Question.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
 };
 
-export default Question1;
+export default Question;

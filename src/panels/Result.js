@@ -10,7 +10,7 @@ const DIRECTION = data.Programming
 const RECOMMENDATIONS_TOP = data.Programming_res.slice(0, 2) // первые 2 топ
 const RECOMMENDATIONS_OTHER = data.Programming_res.slice(2, data.Programming_res.length)
 
-const Result = ({id, go, routes}) => (
+const Result = ({id, go, routes, restart}) => (
     <Panel id={id}>
         <Group className="result_container">
             <h1>Твоё направление - <br/> {DIRECTION.name}</h1>
@@ -24,7 +24,7 @@ const Result = ({id, go, routes}) => (
                 <div className="result_text statistics">По статистике с данным направлением чаще всего выбирают:</div>
                 <div className='cards-container'>
                     {RECOMMENDATIONS_TOP.map((p) => (
-                        <div className='card'>
+                        <div className='card' key={p.name}>
                             <div className="card-header">{p.emoji} &nbsp;{p.name}</div>
                             <div className="card-body">
                                 {p.short}
@@ -48,7 +48,7 @@ const Result = ({id, go, routes}) => (
 
                 <div className='cards-container cards__another'>
                     {RECOMMENDATIONS_OTHER.map((p) => (
-                        <div className='card card-another'>
+                        <div className='card card-another' key={p.name}>
                             <div className="card-header">{p.emoji} &nbsp;{p.name}</div>
                             <div className="card-body">
                                 {p.short}
@@ -56,7 +56,7 @@ const Result = ({id, go, routes}) => (
                         </div>
                     ))}
                 </div>
-                <div className='button-restart' onClick={() => go(routes.HOME)}>
+                <div className='button-restart' onClick={() => {restart(); go(routes.HOME)}}>
                     Пройти тест ещё раз
                 </div>
             </Div>
