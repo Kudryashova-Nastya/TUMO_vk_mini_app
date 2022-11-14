@@ -22,16 +22,20 @@ const Home = ({id, go, routes}) => (
         <Group>
             <div className='poster'></div>
             {/*<img src={poster} height='400'/>*/}
-            <h1>Узнайте, какая креативная профессия подходит вашему ребенку</h1>
+            <h1>Какая креативная профессия подходит вашему ребенку?</h1>
+            <div className="directions_block">
             <div className="directions_icons">
                 <img alt="Animation_logo" src={Animation_logo}/>
                 <img alt="Gamedev_logo" src={Gamedev_logo}/>
                 <img alt="Design_logo" src={Design_logo}/>
                 <img alt="Movie_logo" src={Movie_logo}/>
+            </div>
+            <div className="directions_icons">
                 <img alt="Music_logo" src={Music_logo}/>
                 <img alt="Prog_logo" src={Prog_logo}/>
                 <img alt="Robo_logo" src={Robo_logo}/>
                 <img alt="D3_logo" src={D3_logo}/>
+            </div>
             </div>
             <Div>
                 <div className='directions_text'>

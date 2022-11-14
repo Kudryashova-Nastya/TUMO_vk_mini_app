@@ -26,9 +26,7 @@ const ROUTES = {
 
 const App = () => {
     const [scheme, setScheme] = useState('bright_light')
-    const [activePanel, setActivePanel] = useState(ROUTES.HOME);
-    const [fetchedUser, setUser] = useState(null);
-    const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
+    const [activePanel, setActivePanel] = useState(ROUTES.RESULT); // главная стр
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
@@ -36,14 +34,6 @@ const App = () => {
                 setScheme(data.scheme)
             }
         });
-
-        async function fetchData() {
-            const user = await bridge.send('VKWebAppGetUserInfo');
-            setUser(user);
-            setPopout(null);
-        }
-
-        fetchData();
     }, []);
 
     // const go = e => {
@@ -82,10 +72,10 @@ const App = () => {
         <ConfigProvider scheme={scheme}>
             <AdaptivityProvider>
                 <AppRoot>
-                    <SplitLayout popout={popout}>
+                    <SplitLayout popout={false}>
                         <SplitCol>
                             <View activePanel={activePanel}>
-                                <Home id={ROUTES.HOME} fetchedUser={fetchedUser} go={go} routes={ROUTES}/>
+                                <Home id={ROUTES.HOME} go={go} routes={ROUTES}/>
                                 <Question id={ROUTES.QUESTION1} next={ROUTES.QUESTION2} prev={ROUTES.HOME} number={1}
                                           go={go} q={data.Q1} answer={answer1} setAnswer={setAnswer1}/>
 

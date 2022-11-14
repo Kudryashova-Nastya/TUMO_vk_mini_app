@@ -13,9 +13,7 @@ const RECOMMENDATIONS_OTHER = data.Programming_res.slice(2, data.Programming_res
 const Result = ({id, go, routes, restart}) => (
     <Panel id={id}>
         <Group className="result_container">
-            <h1>Твоё направление - <br/> {DIRECTION.name}</h1>
-            <div className="result_icons">💻 🕸 👩‍💻
-            </div>
+            <div className="result_poster"></div>
             <Div>
                 <div className='direction_text'>{DIRECTION.full}
                 </div>
@@ -34,10 +32,15 @@ const Result = ({id, go, routes, restart}) => (
                 </div>
             </Div>
             <Div>
-                <h3>TUMO</h3>
-                <div className="result_text"><span className="organization">TUMO MOSCOW</span> — это международная школа
-                    креативных технологий, где подростки 12-18 лет раскрывают свой потенциал и становятся лидерами
-                    завтрашнего дня.
+                <h3>TUMO MOSCOW</h3>
+                <div className="result_text"><span className="organization">TUMO MOSCOW</span> — международный бренд
+                    центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
+                    но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного французским
+                    журналом «We demain».
+
+                    На сегодняшний день 17 школ TUMO, помимо нескольких городов Армении, уже работают во Франции,
+                    Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.
+
                 </div>
                 <a className='button-link' href="https://tumo.moscow/tryfree" target="_blank" rel="noreferrer">
                     Записаться на бесплатное пробное занятие
@@ -56,7 +59,10 @@ const Result = ({id, go, routes, restart}) => (
                         </div>
                     ))}
                 </div>
-                <div className='button-restart' onClick={() => {restart(); go(routes.HOME)}}>
+                <div className='button-restart' onClick={() => {
+                    restart();
+                    go(routes.HOME)
+                }}>
                     Пройти тест ещё раз
                 </div>
             </Div>

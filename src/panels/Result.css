@@ -1,6 +1,6 @@
 .direction_text {
     padding: 3vw 5vw;
-    border: 2px solid #6F5FFE;
+    border: 2px solid #3939ca;
     border-radius: 20px;
     margin: 3vw 0;
     /*background-color: black;*/
@@ -8,14 +8,41 @@
 }
 
 .result_container {
-    margin: 0 3vw;
+    /*margin: 0 3vw;*/
 }
 
-.result_icons {
-    font-size: 30px;
-    text-align: center;
-    margin-top: -15px;
+.result_poster {
+    width: 100%;
+    /*height: 300px;*/
+    height: 292px;
+    /*background-color: #3939ca;*/
+    background-color: white;
+    background-image: url("../img/posters/prog_785x300.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    /*border-radius: 30px;*/
 }
+
+@media screen and (max-width: 590px) {
+    .result_poster {
+        background-size: cover;
+        background-image: url("../img/posters/prog_590x300.png");
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .result_poster {
+        background-image: url("../img/posters/prog_320x300.png");
+    }
+}
+
+/*.result_icons {*/
+/*    font-size: 30px;*/
+/*    text-align: center;*/
+/*    margin-top: -15px;*/
+/*}*/
+
 
 .result_text {
     margin-left: 5vw;
@@ -58,7 +85,7 @@ h3 {
     display: -webkit-flex;
     display: flex;
     align-content: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: stretch;
     flex-wrap: wrap;
     margin: 3vw 0 0;
@@ -101,7 +128,7 @@ h3 {
 }
 
 .button-restart {
-    color: #6F5FFE;
+    color: #3939ca;
     font-weight: 600;
     font-size: 21px;
     text-align: center;
