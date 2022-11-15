@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import {Div, Group, Panel} from '@vkontakte/vkui';
 
@@ -9,6 +12,30 @@ import * as data from '../data/directions'
 const DIRECTION = data.Programming
 const RECOMMENDATIONS_TOP = data.Programming_res.slice(0, 2) // первые 2 топ
 const RECOMMENDATIONS_OTHER = data.Programming_res.slice(2, data.Programming_res.length)
+let pageWidth = document.documentElement.scrollWidth
+console.log(pageWidth)
+
+const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "20px",
+    slidesToShow: (pageWidth > 590) ? 3 : 1,
+    speed: 600,
+    focusOnSelect: true,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true
+};
+
+import photo1 from "../img/school/Главная.jpg"
+import photo2 from '../img/school/2.jpg'
+import photo3 from "../img/school/3.jpg"
+import photo4 from "../img/school/4.jpg"
+import photo5 from "../img/school/5.jpg"
+import photo6 from "../img/school/6.jpg"
+import photo7 from "../img/school/7.jpg"
 
 const Result = ({id, go, routes, restart}) => (
     <Panel id={id}>
@@ -33,17 +60,42 @@ const Result = ({id, go, routes, restart}) => (
             </Div>
             <Div>
                 <h3>TUMO MOSCOW</h3>
-                <div className="result_text"><span className="organization">TUMO MOSCOW</span> — международный бренд
-                    центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
-                    но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного французским
-                    журналом «We demain».
+                <div className="result_text">
+                    <p><span className="organization">TUMO</span> — международный бренд
+                        центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
+                        но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного
+                        французским
+                        журналом «We demain».</p>
 
-                    На сегодняшний день 17 школ TUMO, помимо нескольких городов Армении, уже работают во Франции,
-                    Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.
+                    <p>На сегодняшний день 17 школ TUMO, помимо нескольких городов Армении, уже работают во Франции,
+                        Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.</p>
 
                 </div>
+                <Slider {...settings}>
+                    <div>
+                        <img className="school-photo" src={photo1} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo2} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo3} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo4} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo5} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo6} alt="фото школы TUMO"/>
+                    </div>
+                    <div>
+                        <img className="school-photo" src={photo7} alt="фото школы TUMO"/>
+                    </div>
+                </Slider>
                 <a className='button-link' href="https://tumo.moscow/tryfree" target="_blank" rel="noreferrer">
-                    Записаться на бесплатное пробное занятие
+                    {(pageWidth > 590) ? "Записаться на бесплатное пробное занятие": "Бесплатное пробное занятие"}
                 </a>
             </Div>
             <Div>
