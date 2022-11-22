@@ -7,6 +7,7 @@ export const Programming = {
     emoji: "👩‍💻",
     poster_main: require("../img/posters/prog_785x300.png").default,
     poster_midi: require("../img/posters/prog_590x300.png").default,
+    poster_midi2: require("../img/posters/prog_300х375.png").default,
     poster_mini: require("../img/posters/prog_320x300.png").default,
 }
 export const D3 = {
