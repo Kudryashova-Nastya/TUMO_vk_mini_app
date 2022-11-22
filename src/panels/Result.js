@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -19,7 +19,7 @@ const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: (pageWidth > 590) ? "45px": "18px",
+    centerPadding: (pageWidth > 590) ? "45px" : "18px",
     slidesToShow: (pageWidth > 590) ? 2 : 1,
     speed: 600,
     focusOnSelect: true,
@@ -28,6 +28,23 @@ const settings = {
     autoplaySpeed: 3000,
     pauseOnHover: true
 };
+// let poster_main
+// import poster_main from DIRECTION.poster_main.toString()
+// const poster_main = React.lazy(() => import('../img/posters/prog_785x300.png'));
+// (async () => {
+//     poster_main  = await import('../img/posters/prog_785x300.png');
+// })();
+
+// const poster_main = '/static/media/prog_590x300.fce1c635.png'
+const poster_main = DIRECTION.poster_main
+// const poster_main = import('../img/posters/prog_785x300.png');
+console.log(poster_main)
+// import poster_main from `${DIRECTION.poster_main}`
+// const poster = {backgroundImage: `url("${require(DIRECTION.poster_main)}")`}
+
+let poster = {backgroundImage: `url(${poster_main})`}
+// backgroundImage: `url(${Background})`
+console.log(poster)
 
 import photo1 from "../img/school/Главная.jpg"
 import photo2 from '../img/school/2.jpg'
@@ -37,14 +54,26 @@ import photo5 from "../img/school/5.jpg"
 import photo6 from "../img/school/6.jpg"
 import photo7 from "../img/school/7.jpg"
 
-const Result = ({id, go, routes, restart}) => (
-    <Panel id={id}>
+
+const Result = ({id, go, routes, restart}) => {
+    // let poster = {color: "red"}
+    //
+    // useEffect(() => {
+    //     // poster = {backgroundImage: `url(${poster_main})`};
+    //     // poster = {backgroundImage: "url(/static/media/prog_785x300.fce1c635.png)", color: "blue"};
+    //     poster = {color: "blue"};
+    //     // не передаётся!
+    //     console.log(poster)
+    // }, []);
+
+    return (<Panel id={id}>
         <Group className="result_container">
-            <div className="result_poster"></div>
+            <div className="result_poster" style={poster}></div>
             <Div>
                 <div className='direction_text'>{DIRECTION.full}
                 </div>
             </Div>
+            {/*<img src={poster_main}/>*/}
             <Div>
                 <div className="result_text statistics">По статистике с данным направлением чаще всего выбирают:</div>
                 <div className='cards-container'>
@@ -95,7 +124,7 @@ const Result = ({id, go, routes, restart}) => (
                     </div>
                 </Slider>
                 <a className='button-link' href="https://tumo.moscow/tryfree" target="_blank" rel="noreferrer">
-                    {(pageWidth > 590) ? "Записаться на бесплатное пробное занятие": "Бесплатное пробное занятие"}
+                    {(pageWidth > 590) ? "Записаться на бесплатное пробное занятие" : "Бесплатное пробное занятие"}
                 </a>
             </Div>
             <Div>
@@ -138,12 +167,11 @@ const Result = ({id, go, routes, restart}) => (
                 ул. Мантулинская, 7 стр. 3
             </div>
         </footer>
-    </Panel>
-);
+    </Panel>);
+};
 
 Result.propTypes = {
     id: PropTypes.string.isRequired,
     go: PropTypes.func.isRequired,
-};
-
+}
 export default Result;
