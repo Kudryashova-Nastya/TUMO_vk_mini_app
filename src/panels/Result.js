@@ -63,7 +63,8 @@ const Result = ({id, go, routes, restart}) => {
                 <div className='cards-container'>
                     {RECOMMENDATIONS_TOP.map((p) => (
                         <div className='card' key={p.name}>
-                            <div className="card-header">{p.emoji} &nbsp;{p.name}</div>
+                            <div className="card-header"><img className="card-ico" height="32" alt="ico" src={p.emoji}/>
+                                <span className="card-name">{p.name}</span></div>
                             <div className="card-body">
                                 {p.short}
                             </div>
@@ -117,7 +118,8 @@ const Result = ({id, go, routes, restart}) => {
                 <div className='cards-container cards__another'>
                     {RECOMMENDATIONS_OTHER.map((p) => (
                         <div className='card card-another' key={p.name}>
-                            <div className="card-header">{p.emoji} &nbsp;{p.name}</div>
+                            <div className="card-header"><img className="card-ico" height="32" alt="ico" src={p.emoji}/>
+                                <span className="card-name">{p.name}</span></div>
                             <div className="card-body">
                                 {p.short}
                             </div>
