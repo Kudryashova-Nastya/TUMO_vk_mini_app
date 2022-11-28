@@ -49,8 +49,13 @@ h2 {
   margin-top: 8vh;
 }
 
-.button-next:hover {
+.active:hover {
   background-color: #5b49fd;
+}
+
+.disable {
+  background-color: rgba(111, 95, 254, 0.57);
+  cursor: initial;
 }
 
 .vkuiRadio__input:checked~.vkuiRadio__container .vkuiRadio__icon {

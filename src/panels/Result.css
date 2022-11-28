@@ -42,9 +42,9 @@
     text-align: center;
     white-space: nowrap;
     color: #fff;
-    padding: 15px 0;
-    font-size: 18px;
-    margin: 5vh 4vw 0;
+    padding: 13px 0;
+    font-size: 16px;
+    margin: 5vh 12vw 0;
     text-decoration: none;
     letter-spacing: .3px;
 }
@@ -77,7 +77,7 @@ h3 {
     align-items: stretch;
     flex-wrap: wrap;
     margin: 3vw 0 0;
-    /*gap: 20px;*/
+    gap: 20px;
 }
 
 .card-another:nth-child(5) {
@@ -164,6 +164,10 @@ h3 {
     .result_text {
         margin-left: 4vw;
         line-height: 1.5;
+    }
+
+    .cards-container {
+        margin: 6vw 0 0;
     }
 }
 
