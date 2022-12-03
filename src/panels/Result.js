@@ -19,9 +19,9 @@ const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: (pageWidth > 620) ? "45px" : "18px",
+    centerPadding: (pageWidth > 620) ? "35px" : "12px",
     slidesToShow: (pageWidth > 590) ? 2 : 1,
-    speed: 600,
+    speed: 800,
     focusOnSelect: true,
     slidesToScroll: 1,
     autoplay: true,
@@ -32,7 +32,7 @@ const settings = {
 let poster
 if (pageWidth > 590) {
     poster = {backgroundImage: `url(${DIRECTION.poster_main})`}
-} else if (pageWidth > 375) {
+} else if (pageWidth > 390) {
     poster = {backgroundImage: `url(${DIRECTION.poster_midi})`}
 } else if (pageWidth > 330) {
     poster = {backgroundImage: `url(${DIRECTION.poster_midi2})`}
@@ -40,34 +40,31 @@ if (pageWidth > 590) {
     poster = {backgroundImage: `url(${DIRECTION.poster_mini})`}
 }
 
-import photo1 from "../img/school/Главная.jpg"
-import photo2 from '../img/school/2.jpg'
-import photo3 from "../img/school/3.jpg"
-import photo4 from "../img/school/4.jpg"
-import photo5 from "../img/school/5.jpg"
-import photo6 from "../img/school/6.jpg"
-import photo7 from "../img/school/7.jpg"
-
 
 const Result = ({id, go, routes, restart}) => {
 
     return (<Panel id={id}>
         <Group className="result_container">
-            <div className="result_poster" style={poster}></div>
+            <a href={DIRECTION.link} target="_blank" rel="noreferrer">
+                <div className="result_poster" style={poster}></div>
+            </a>
             <Div>
                 <div className='direction_text'>{DIRECTION.full}
                 </div>
+
+                <a className='button-link' href="vk.com/app6013442_-195122400?form_id=36#form_id=36" target="_blank"
+                   rel="noreferrer">
+                    {(pageWidth > 590) ? "Записаться на бесплатное пробное занятие" : "Бесплатное пробное занятие"}
+                </a>
             </Div>
             <Div>
                 <div className="result_text statistics">По статистике с данным направлением чаще всего выбирают:</div>
                 <div className='cards-container'>
                     {RECOMMENDATIONS_TOP.map((p) => (
-                        <div className='card' key={p.name}>
-                            <div className="card-header"><img className="card-ico" height="32" alt="ico" src={p.emoji}/>
-                                <span className="card-name">{p.name}</span></div>
-                            <div className="card-body">
-                                {p.short}
-                            </div>
+                        <div key={p.name}>
+                            <a href={p.link} key={p.name} target="_blank" rel="noreferrer">
+                                <img className="rec-poster" src={p.rec_poster_top} alt="постер направления TUMO"/>
+                            </a>
                         </div>
                     ))}
                 </div>
@@ -85,47 +82,18 @@ const Result = ({id, go, routes, restart}) => {
                         Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.</p>
 
                 </div>
-                <Slider {...settings}>
-                    <div>
-                        <img className="school-photo" src={photo1} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo2} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo3} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo4} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo5} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo6} alt="фото школы TUMO"/>
-                    </div>
-                    <div>
-                        <img className="school-photo" src={photo7} alt="фото школы TUMO"/>
-                    </div>
-                </Slider>
-                <a className='button-link' href="https://tumo.moscow/tryfree" target="_blank" rel="noreferrer">
-                    {(pageWidth > 590) ? "Записаться на бесплатное пробное занятие" : "Бесплатное пробное занятие"}
-                </a>
+
             </Div>
             <Div>
-                <h3>Другие направления</h3>
-
-                <div className='cards-container cards__another'>
+                <div className="result_text statistics">Другие направления</div>
+                <br/>
+                <Slider {...settings}>
                     {RECOMMENDATIONS_OTHER.map((p) => (
-                        <div className='card card-another' key={p.name}>
-                            <div className="card-header"><img className="card-ico" height="32" alt="ico" src={p.emoji}/>
-                                <span className="card-name">{p.name}</span></div>
-                            <div className="card-body">
-                                {p.short}
-                            </div>
-                        </div>
+                        <a href={p.link} key={p.name} target="_blank" rel="noreferrer">
+                            <img className="school-photo" src={p.rec_poster_other} alt="фото других направлений TUMO"/>
+                        </a>
                     ))}
-                </div>
+                </Slider>
                 <div className='button-restart' onClick={() => {
                     restart();
                     go(routes.HOME)
@@ -136,19 +104,19 @@ const Result = ({id, go, routes, restart}) => {
 
         </Group>
         <footer>
-            <div className="footer_column">
+            <div className="footer_column footer__text">
                 <a className="footer_link" target="_blank" rel="noreferrer" href="tel: +7(495)646-02-73">+7 (495)
                     646-02-73</a><br/>
                 <a className="footer_link" target="_blank" rel="noreferrer"
-                   href="mailto: info@tumo.moscow">info@tumo.moscow</a>
+                   href="https://tumo.moscow/">tumo.moscow</a>
             </div>
-            <div className="footer_column">
+            <div className="footer_column footer__logo">
                 <a className="footer_link" target="_blank" rel="noreferrer" href="https://tumo.moscow/">
                     <img alt="Лого TUMO"
                          src="https://thumb.tildacdn.com/tild6664-6331-4334-a161-366530316463/-/cover/320x40/center/center/-/format/webp/11799789611339936983.png"/>
                 </a>
             </div>
-            <div className="footer_column">
+            <div className="footer_column footer__text">
                 123100, Россия, Москва,<br/>
                 ул. Мантулинская, 7 стр. 3
             </div>

@@ -10,9 +10,9 @@
 
 
 .school-photo {
-    /*height: 200px;*/
     height: 200px;
 }
+
 
 .result_container {
     /*margin: 0 3vw;*/
@@ -31,7 +31,7 @@
 }
 
 .button-link {
-    background-color: #F50106;
+    background-color: #6F5FFE;
     transition: background-color .15s ease-in-out;
     border-radius: 30px;
     cursor: pointer;
@@ -44,7 +44,7 @@
     color: #fff;
     padding: 13px 0;
     font-size: 16px;
-    margin: 5vh 12vw 0;
+    margin: 4vw 12vw 2vw;
     text-decoration: none;
     letter-spacing: .3px;
 }
@@ -61,7 +61,7 @@
 
 
 .button-link:hover {
-    background-color: #e30206;
+    background-color: #5b49fd;
 }
 
 h3 {
@@ -80,43 +80,10 @@ h3 {
     gap: 20px;
 }
 
-.card-another:nth-child(5) {
-    margin: 0 auto;
+.rec-poster {
+    width: 100%;
 }
 
-.cards__another {
-    gap: 4vw;
-}
-
-.card {
-    width: 42vw;
-    border: 2px solid #6F5FFE;
-    border-radius: 30px;
-}
-
-.card-header {
-    background-color: #6F5FFE;
-    color: white;
-    border: 2px solid #6F5FFE;
-    border-radius: 30px;
-    margin: -2px;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 1.5vw 3vw 1.2vw;
-}
-
-.card-ico {
-    vertical-align:middle;
-    margin-top: -4px;
-}
-
-.card-name {
-    margin-left: 0.6vw;
-}
-
-.card-body {
-    padding: 2vw 3vw;
-}
 
 @media screen and (max-width: 590px) {
 
@@ -124,9 +91,6 @@ h3 {
         font-size: 16px;
     }
 
-    .school-photo {
-        height: 200px;
-    }
 
     .button-link {
         margin: 5vh 1.7vw 0;
@@ -169,12 +133,34 @@ h3 {
     .cards-container {
         margin: 6vw 0 0;
     }
+
+
+    .footer__text {
+        order: 2;
+    }
+
+    .footer__logo {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        margin: 15px 0 7px;
+    }
 }
 
 @media screen and (max-width: 376px) {
     .result_poster {
         background-size: cover;
         background-image: url("../img/posters/prog_300х375.png");
+    }
+
+    .school-photo {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .school-photo {
+        height: 160px;
     }
 }
 

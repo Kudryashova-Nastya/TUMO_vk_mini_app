@@ -9,6 +9,8 @@ export const Programming = {
     poster_midi: require("../img/posters/prog_590x300.png").default,
     poster_midi2: require("../img/posters/prog_300х375.png").default,
     poster_mini: require("../img/posters/prog_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/prog_red_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/prog_black_386х240.png").default,
 }
 export const D3 = {
     name: "3D-моделирование",
@@ -20,6 +22,8 @@ export const D3 = {
     poster_midi: require("../img/posters/3D_590x300.png").default,
     poster_midi2: require("../img/posters/3D_300х375.png").default,
     poster_mini: require("../img/posters/3D_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/3d_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/3d_black_386х240.png").default,
 }
 export const Animation = {
     name: "Анимация",
@@ -31,6 +35,8 @@ export const Animation = {
     poster_midi: require("../img/posters/animation_590x300.png").default,
     poster_midi2: require("../img/posters/animation_300х375.png").default,
     poster_mini: require("../img/posters/animation_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/animation_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/animation_black_386х240.png").default,
 }
 export const Movie = {
     name: "Кинопроизводство",
@@ -42,6 +48,8 @@ export const Movie = {
     poster_midi: require("../img/posters/kino_590x300.png").default,
     poster_midi2: require("../img/posters/kino_300х375.png").default,
     poster_mini: require("../img/posters/kino_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/kino_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/kino_black_386х240.png").default,
 }
 export const Design = {
     name: "Графический дизайн",
@@ -53,6 +61,8 @@ export const Design = {
     poster_midi: require("../img/posters/design_590x300.png").default,
     poster_midi2: require("../img/posters/design_300х375.png").default,
     poster_mini: require("../img/posters/design_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/design_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/design_black_386х240.png").default,
 }
 export const Gamedev = {
     name: "Разработка игр",
@@ -64,6 +74,8 @@ export const Gamedev = {
     poster_midi: require("../img/posters/gamedev_590x300.png").default,
     poster_midi2: require("../img/posters/gamedev_300х375.png").default,
     poster_mini: require("../img/posters/gamedev_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/game_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/game_black_386х240.png").default,
 }
 export const Robots = {
     name: "Робототехника",
@@ -75,6 +87,8 @@ export const Robots = {
     poster_midi: require("../img/posters/robo_590x300.png").default,
     poster_midi2: require("../img/posters/robo_300х375.png").default,
     poster_mini: require("../img/posters/robo_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/robo_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/robo_black_386х240.png").default,
 }
 export const Music = {
     name: "Создание музыки",
@@ -86,6 +100,8 @@ export const Music = {
     poster_midi: require("../img/posters/music_590x300.png").default,
     poster_midi2: require("../img/posters/music_300х375.png").default,
     poster_mini: require("../img/posters/music_320x300.png").default,
+    rec_poster_top: require("../img/mini_posters/music_340х270.png").default,
+    rec_poster_other: require("../img/mini_posters/music_black_386х240.png").default,
 }
 
 
