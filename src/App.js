@@ -22,6 +22,7 @@ const ROUTES = {
     QUESTION2: 'question2',
     QUESTION3: 'question3',
     QUESTION4: 'question4',
+    QUESTION5: 'question5',
     RESULT: 'result',
 }
 
@@ -56,6 +57,7 @@ const App = () => {
     let [question2, setQuestion2] = useState({})
     let [question3, setQuestion3] = useState({})
     let [question4, setQuestion4] = useState({})
+    let [question5, setQuestion5] = useState({})
 
     useEffect(() => {
         console.log("answer1", answer1)
@@ -148,6 +150,27 @@ const App = () => {
         }
     }, [answer3]);
 
+    useEffect(() => {
+        console.log("answer4", answer4)
+        switch (answer4) {
+            case "v1_a":
+            case "v1_b":
+            case "v1_c":
+                setQuestion5(data.Q5.v1)
+                break
+
+            case "v2_a":
+            case "v2_b":
+            case "v2_c":
+                setQuestion5(data.Q5.v2)
+                break
+
+            case "v3_a":
+            case "v3_b":
+                setQuestion5(data.Q5.v3)
+        }
+    }, [answer4]);
+
     const restart = () => {
         setAnswer1(0)
         setAnswer2(0)
@@ -205,8 +228,11 @@ const App = () => {
                                           number={3}
                                           go={go} q={question3} answer={answer3} setAnswer={setAnswer3}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION4} next={ROUTES.RESULT} prev={ROUTES.QUESTION3} number={4}
+                                <Question id={ROUTES.QUESTION4} next={ROUTES.QUESTION5} prev={ROUTES.QUESTION3} number={4}
                                           go={go} q={question4} answer={answer4} setAnswer={setAnswer4}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION5} next={ROUTES.RESULT} prev={ROUTES.QUESTION4} number={5}
+                                          go={go} q={question5} answer={answer5} setAnswer={setAnswer5}
                                           clearAnswer={clearAnswer}/>
                                 <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}/>
                             </View>
