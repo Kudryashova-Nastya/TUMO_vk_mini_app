@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import bridge from '@vkontakte/vk-bridge';
 import {
     View,
-    ScreenSpinner,
     AdaptivityProvider,
     AppRoot,
     ConfigProvider,
@@ -22,6 +21,7 @@ const ROUTES = {
     QUESTION1: 'question1',
     QUESTION2: 'question2',
     QUESTION3: 'question3',
+    QUESTION4: 'question4',
     RESULT: 'result',
 }
 
@@ -96,8 +96,6 @@ const App = () => {
                 setQuestion3(data.Q3.v5)
                 break
             case "v2_b":
-                setQuestion3(data.Q3.v6)
-                break
             case "v2_c":
                 setQuestion3(data.Q3.v6)
                 break
@@ -107,20 +105,48 @@ const App = () => {
                 setQuestion3(data.Q3.v7)
                 break
             case "v3_b":
-                setQuestion3(data.Q3.v3)
-                break
             case "v3_c":
                 setQuestion3(data.Q3.v3)
                 break
 
             // если второй вопрос V4
             case "v4_a":
-                setQuestion3(data.Q3.v6)
-                break
             case "v4_b":
                 setQuestion3(data.Q3.v6)
         }
     }, [answer2]);
+
+    useEffect(() => {
+        console.log("answer3", answer3)
+        switch (answer3) {
+            case "v1_a":
+            case "v1_b":
+            case "v1_c":
+            case "v3_a":
+            case "v3_b":
+            case "v3_c":
+            case "v4_a":
+            case "v4_b":
+            case "v5_a":
+            case "v5_b":
+            case "v6_a":
+            case "v6_b":
+            case "v6_c":
+                setQuestion4(data.Q4.v1)
+                break
+
+            case "v2_a":
+            case "v2_b":
+            case "v2_c":
+                setQuestion4(data.Q4.v2)
+                break
+
+            case "v7_a":
+            case "v7_b":
+            case "v7_c":
+                setQuestion4(data.Q4.v3)
+        }
+    }, [answer3]);
 
     const restart = () => {
         setAnswer1(0)
@@ -135,7 +161,7 @@ const App = () => {
         setQuestion4({})
     }
 
-    const  clearAnswer = (number) => {
+    const clearAnswer = (number) => {
         switch (number) {
             case 1:
                 setAnswer1(0)
@@ -169,12 +195,19 @@ const App = () => {
                             <View activePanel={activePanel}>
                                 <Home id={ROUTES.HOME} go={go} routes={ROUTES}/>
                                 <Question id={ROUTES.QUESTION1} next={ROUTES.QUESTION2} prev={ROUTES.HOME} number={1}
-                                          go={go} q={data.Q1} answer={answer1} setAnswer={setAnswer1} clearAnswer={clearAnswer}/>
-
-                                <Question id={ROUTES.QUESTION2} next={ROUTES.QUESTION3} prev={ROUTES.QUESTION1} number={2}
-                                          go={go} q={question2} answer={answer2} setAnswer={setAnswer2} clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION3} next={ROUTES.RESULT} prev={ROUTES.QUESTION2} number={3}
-                                          go={go} q={question3} answer={answer3} setAnswer={setAnswer3} clearAnswer={clearAnswer}/>
+                                          go={go} q={data.Q1} answer={answer1} setAnswer={setAnswer1}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION2} next={ROUTES.QUESTION3} prev={ROUTES.QUESTION1}
+                                          number={2}
+                                          go={go} q={question2} answer={answer2} setAnswer={setAnswer2}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION3} next={ROUTES.QUESTION4} prev={ROUTES.QUESTION2}
+                                          number={3}
+                                          go={go} q={question3} answer={answer3} setAnswer={setAnswer3}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION4} next={ROUTES.RESULT} prev={ROUTES.QUESTION3} number={4}
+                                          go={go} q={question4} answer={answer4} setAnswer={setAnswer4}
+                                          clearAnswer={clearAnswer}/>
                                 <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}/>
                             </View>
                         </SplitCol>
