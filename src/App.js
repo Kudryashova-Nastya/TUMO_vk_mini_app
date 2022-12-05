@@ -23,6 +23,8 @@ const ROUTES = {
     QUESTION3: 'question3',
     QUESTION4: 'question4',
     QUESTION5: 'question5',
+    QUESTION6: 'question6',
+    QUESTION7: 'question7',
     RESULT: 'result',
 }
 
@@ -58,6 +60,8 @@ const App = () => {
     let [question3, setQuestion3] = useState({})
     let [question4, setQuestion4] = useState({})
     let [question5, setQuestion5] = useState({})
+    let [question6, setQuestion6] = useState({})
+    let [question7, setQuestion7] = useState({})
 
     useEffect(() => {
         console.log("answer1", answer1)
@@ -171,6 +175,40 @@ const App = () => {
         }
     }, [answer4]);
 
+    useEffect(() => {
+        console.log("answer5", answer5)
+        switch (answer5) {
+            case "v1_a":
+            case "v1_b":
+                setQuestion6(data.Q6.v1)
+                break
+
+            case "v2_a":
+            case "v2_b":
+            case "v2_c":
+                setQuestion6(data.Q6.v2)
+                break
+
+            case "v3_a":
+            case "v3_b":
+                setQuestion6(data.Q6.v3)
+        }
+    }, [answer5]);
+
+    useEffect(() => {
+        console.log("answer6", answer6)
+        switch (answer6) {
+            case "v1_a":
+            case "v1_b":
+                setQuestion7(data.Q7.v1)
+                break
+
+        case "v2_a":
+        case "v2_b":
+            setQuestion7(data.Q7.v2)
+        }
+    }, [answer6]);
+
     const restart = () => {
         setAnswer1(0)
         setAnswer2(0)
@@ -182,6 +220,9 @@ const App = () => {
         setQuestion2({})
         setQuestion3({})
         setQuestion4({})
+        setQuestion5({})
+        setQuestion6({})
+        setQuestion7({})
     }
 
     const clearAnswer = (number) => {
@@ -228,11 +269,20 @@ const App = () => {
                                           number={3}
                                           go={go} q={question3} answer={answer3} setAnswer={setAnswer3}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION4} next={ROUTES.QUESTION5} prev={ROUTES.QUESTION3} number={4}
+                                <Question id={ROUTES.QUESTION4} next={ROUTES.QUESTION5} prev={ROUTES.QUESTION3}
+                                          number={4}
                                           go={go} q={question4} answer={answer4} setAnswer={setAnswer4}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION5} next={ROUTES.RESULT} prev={ROUTES.QUESTION4} number={5}
+                                <Question id={ROUTES.QUESTION5} next={ROUTES.QUESTION6} prev={ROUTES.QUESTION4}
+                                          number={5}
                                           go={go} q={question5} answer={answer5} setAnswer={setAnswer5}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION6} next={ROUTES.QUESTION7} prev={ROUTES.QUESTION5}
+                                          number={6}
+                                          go={go} q={question6} answer={answer6} setAnswer={setAnswer6}
+                                          clearAnswer={clearAnswer}/>
+                                <Question id={ROUTES.QUESTION7} next={ROUTES.RESULT} prev={ROUTES.QUESTION6} number={7}
+                                          go={go} q={question7} answer={answer7} setAnswer={setAnswer7}
                                           clearAnswer={clearAnswer}/>
                                 <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}/>
                             </View>
