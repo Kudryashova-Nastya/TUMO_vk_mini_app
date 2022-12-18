@@ -63,6 +63,26 @@ const App = () => {
     let [question6, setQuestion6] = useState({})
     let [question7, setQuestion7] = useState({})
 
+    let weigths = {
+        Gamedev: 0,
+        Music: 0,
+        D3: 0,
+        Robots: 0,
+        Design: 0,
+        Movie: 0,
+        Animation: 0,
+        Programming: 0
+    }
+
+    const plusGamedev = (w) => {
+        weigths.Gamedev += w
+    }
+
+    // var list = {"you": 100, "me": 75, "foo": 116, "bar": 15};
+    // keysSorted = Object.keys(list).sort(function(a,b){return list[a]-list[b]})
+    // console.log(keysSorted);
+
+
     useEffect(() => {
         console.log("answer1", answer1)
         switch (answer1) {
@@ -82,6 +102,7 @@ const App = () => {
 
     useEffect(() => {
         console.log("answer2", answer2)
+        console.log("weigths", weigths)
         switch (answer2) {
             // если второй вопрос V1
             case "v1_a":
@@ -108,11 +129,9 @@ const App = () => {
 
             // если второй вопрос V3
             case "v3_a":
-                setQuestion3(data.Q3.v7)
-                break
             case "v3_b":
             case "v3_c":
-                setQuestion3(data.Q3.v3)
+                setQuestion3(data.Q3.v6)
                 break
 
             // если второй вопрос V4
@@ -124,6 +143,7 @@ const App = () => {
 
     useEffect(() => {
         console.log("answer3", answer3)
+        console.log("weigths", weigths)
         switch (answer3) {
             case "v1_a":
             case "v1_b":
@@ -144,68 +164,38 @@ const App = () => {
             case "v2_a":
             case "v2_b":
             case "v2_c":
-                setQuestion4(data.Q4.v2)
-                break
-
-            case "v7_a":
-            case "v7_b":
-            case "v7_c":
-                setQuestion4(data.Q4.v3)
+                setQuestion4(data.Q4.v1)
         }
     }, [answer3]);
 
     useEffect(() => {
         console.log("answer4", answer4)
+        console.log("weigths", weigths)
         switch (answer4) {
             case "v1_a":
             case "v1_b":
             case "v1_c":
                 setQuestion5(data.Q5.v1)
-                break
-
-            case "v2_a":
-            case "v2_b":
-            case "v2_c":
-                setQuestion5(data.Q5.v2)
-                break
-
-            case "v3_a":
-            case "v3_b":
-                setQuestion5(data.Q5.v3)
         }
     }, [answer4]);
 
     useEffect(() => {
         console.log("answer5", answer5)
+        console.log("weigths", weigths)
         switch (answer5) {
             case "v1_a":
             case "v1_b":
                 setQuestion6(data.Q6.v1)
-                break
-
-            case "v2_a":
-            case "v2_b":
-            case "v2_c":
-                setQuestion6(data.Q6.v2)
-                break
-
-            case "v3_a":
-            case "v3_b":
-                setQuestion6(data.Q6.v3)
         }
     }, [answer5]);
 
     useEffect(() => {
         console.log("answer6", answer6)
+        console.log("weigths", weigths)
         switch (answer6) {
             case "v1_a":
             case "v1_b":
                 setQuestion7(data.Q7.v1)
-                break
-
-        case "v2_a":
-        case "v2_b":
-            setQuestion7(data.Q7.v2)
         }
     }, [answer6]);
 
@@ -223,6 +213,16 @@ const App = () => {
         setQuestion5({})
         setQuestion6({})
         setQuestion7({})
+        weigths = {
+            Gamedev: 0,
+            Music: 0,
+            D3: 0,
+            Robots: 0,
+            Design: 0,
+            Movie: 0,
+            Animation: 0,
+            Programming: 0
+        }
     }
 
     const clearAnswer = (number) => {
