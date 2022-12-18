@@ -72,11 +72,11 @@ const Result = ({id, go, routes, restart}) => {
             <Div>
                 <h3>TUMO MOSCOW</h3>
                 <div className="result_text">
-                    <p><span className="organization">TUMO</span> — международный бренд
+                    <p><a href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app"
+                          className="organization">TUMO</a> — международный бренд
                         центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
                         но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного
-                        французским
-                        журналом «We demain».</p>
+                        французским журналом «We demain».</p>
 
                     <p>На сегодняшний день 17 школ TUMO, помимо нескольких городов Армении, уже работают во Франции,
                         Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.</p>
@@ -108,10 +108,10 @@ const Result = ({id, go, routes, restart}) => {
                 <a className="footer_link" target="_blank" rel="noreferrer" href="tel: +7(495)646-02-73">+7 (495)
                     646-02-73</a><br/>
                 <a className="footer_link" target="_blank" rel="noreferrer"
-                   href="https://tumo.moscow/">tumo.moscow</a>
+                   href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">tumo.moscow</a>
             </div>
             <div className="footer_column footer__logo">
-                <a className="footer_link" target="_blank" rel="noreferrer" href="https://tumo.moscow/">
+                <a className="footer_link" target="_blank" rel="noreferrer" href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">
                     <img alt="Лого TUMO"
                          src="https://thumb.tildacdn.com/tild6664-6331-4334-a161-366530316463/-/cover/320x40/center/center/-/format/webp/11799789611339936983.png"/>
                 </a>
