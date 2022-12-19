@@ -34,7 +34,8 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
     let poster
     if (pageWidth > 590) {
         poster = {backgroundImage: `url(${DIRECTION.poster_main})`}
-    } else if (pageWidth > 390) {
+    // } else if (pageWidth > 390) {
+    } else if (pageWidth > 415) {
         poster = {backgroundImage: `url(${DIRECTION.poster_midi})`}
     } else if (pageWidth > 330) {
         poster = {backgroundImage: `url(${DIRECTION.poster_midi2})`}
