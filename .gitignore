@@ -39,7 +39,6 @@ typings/
 .pnp.js
 package-lock.json
 
-/build
 
 .idea/
 .vscode/
