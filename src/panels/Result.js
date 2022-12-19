@@ -53,7 +53,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                 <div className='direction_text'>{DIRECTION.full}
                 </div>
 
-                <a className='button-link' href="vk.com/app6013442_-195122400?form_id=36#form_id=36" target="_blank"
+                <a className='button-link' href="https://vk.com/app6013442_-195122400?form_id=36#form_id=36" target="_blank"
                    rel="noreferrer">
                     {(pageWidth > 590) ? "Получить бесплатный пробный урок в подарок" : "Бесплатный урок в подарок"}
                 </a>
