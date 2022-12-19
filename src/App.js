@@ -15,6 +15,7 @@ import Question from "./panels/Question";
 import Result from "./panels/Result";
 
 import * as data from './data/questions'
+import * as dir from "./data/directions";
 
 const ROUTES = {
     HOME: 'home',
@@ -30,7 +31,7 @@ const ROUTES = {
 
 const App = () => {
     const [scheme, setScheme] = useState('bright_light')
-    const [activePanel, setActivePanel] = useState(ROUTES.RESULT); // главная стр
+    const [activePanel, setActivePanel] = useState(ROUTES.HOME); // главная стр
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
@@ -63,141 +64,263 @@ const App = () => {
     let [question6, setQuestion6] = useState({})
     let [question7, setQuestion7] = useState({})
 
-    let weigths = {
-        Gamedev: 0,
-        Music: 0,
-        D3: 0,
-        Robots: 0,
-        Design: 0,
-        Movie: 0,
-        Animation: 0,
-        Programming: 0
-    }
+    let [weigths1, setWeigths1] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+    let [weigths2, setWeigths2] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+    let [weigths3, setWeigths3] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+    let [weigths4, setWeigths4] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+    let [weigths5, setWeigths5] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+    let [weigths6, setWeigths6] = useState({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
 
-    const plusGamedev = (w) => {
-        weigths.Gamedev += w
-    }
-
-    // var list = {"you": 100, "me": 75, "foo": 116, "bar": 15};
-    // keysSorted = Object.keys(list).sort(function(a,b){return list[a]-list[b]})
-    // console.log(keysSorted);
+    let [directionMain, setDirectionMain] = useState({})
+    let [directionRes, setDirectionRes] = useState({})
 
 
     useEffect(() => {
-        console.log("answer1", answer1)
+        // console.log("answer1", answer1)
         switch (answer1) {
             case "a":
                 setQuestion2(data.Q2.v1)
+                setWeigths1({G: 1, Mu: 0, D3: 1, R: 0, De: 0, Mo: 0, A: 0, P: 1})
                 break
             case "b":
                 setQuestion2(data.Q2.v2)
+                setWeigths1({G: 0, Mu: 2, D3: 0, R: 0, De: 0, Mo: 1, A: 0, P: 0})
                 break
             case "c":
                 setQuestion2(data.Q2.v3)
+                setWeigths1({G: 0, Mu: 0, D3: 0, R: 1, De: 1, Mo: 0, A: 0, P: 0})
                 break
             case "d":
                 setQuestion2(data.Q2.v4)
+                setWeigths1({G: 0, Mu: 1, D3: 0, R: 0, De: 0, Mo: 1, A: 1, P: 0})
         }
     }, [answer1]);
 
     useEffect(() => {
-        console.log("answer2", answer2)
-        console.log("weigths", weigths)
+        // console.log("weigths1", weigths1)
+        // console.log("answer2", answer2)
         switch (answer2) {
             // если второй вопрос V1
             case "v1_a":
                 setQuestion3(data.Q3.v1)
+                setWeigths2({G: 0, Mu: 1, D3: 0, R: 0, De: 1, Mo: 0, A: 0, P: 0})
                 break
             case "v1_b":
                 setQuestion3(data.Q3.v2)
+                setWeigths2({G: 0, Mu: 2, D3: 0, R: 0, De: 0, Mo: 2, A: 1, P: 0})
                 break
             case "v1_c":
                 setQuestion3(data.Q3.v3)
+                setWeigths2({G: 2, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 1})
                 break
             case "v1_d":
                 setQuestion3(data.Q3.v4)
+                setWeigths2({G: 0, Mu: 0, D3: 2, R: 0, De: 2, Mo: 0, A: 0, P: 0})
                 break
 
             // если второй вопрос V2
             case "v2_a":
                 setQuestion3(data.Q3.v5)
+                setWeigths2({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 3, A: 0, P: 0})
                 break
             case "v2_b":
+                setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 3, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
+                break
             case "v2_c":
                 setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 0, D3: 0, R: 0, De: 3, Mo: 0, A: 0, P: 0})
                 break
 
             // если второй вопрос V3
             case "v3_a":
+                setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 0, D3: 2, R: 3, De: 0, Mo: 0, A: 0, P: 0})
+                break
             case "v3_b":
+                setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 3, A: 0, P: 0})
+                break
             case "v3_c":
                 setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 0, D3: 0, R: 0, De: 2, Mo: 0, A: 2, P: 0})
                 break
 
             // если второй вопрос V4
             case "v4_a":
+                setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 1, A: 2, P: 0})
+                break
             case "v4_b":
                 setQuestion3(data.Q3.v6)
+                setWeigths2({G: 0, Mu: 2, D3: 1, R: 0, De: 1, Mo: 0, A: 0, P: 0})
         }
     }, [answer2]);
 
     useEffect(() => {
-        console.log("answer3", answer3)
-        console.log("weigths", weigths)
+        // console.log("weigths2", weigths2)
+        // console.log("answer3", answer3)
         switch (answer3) {
             case "v1_a":
-            case "v1_b":
-            case "v1_c":
-            case "v3_a":
-            case "v3_b":
-            case "v3_c":
-            case "v4_a":
-            case "v4_b":
-            case "v5_a":
-            case "v5_b":
-            case "v6_a":
-            case "v6_b":
-            case "v6_c":
-                setQuestion4(data.Q4.v1)
+                setWeigths3({G: 0, Mu: 2, D3: 0, R: 0, De: 0, Mo: 1, A: 0, P: 0})
                 break
-
+            case "v1_b":
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 1, Mo: 1, A: 0, P: 0})
+                break
+            case "v1_c":
+                setWeigths3({G: 2, Mu: 0, D3: 1, R: 0, De: 0, Mo: 0, A: 0, P: 1})
+                break
             case "v2_a":
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 1, A: 1, P: 0})
+                break
             case "v2_b":
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 2, A: 0, P: 0})
+                break
             case "v2_c":
-                setQuestion4(data.Q4.v1)
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 2, P: 0})
+                break
+            case "v3_a":
+                setWeigths3({G: 2, Mu: 0, D3: 2, R: 0, De: 0, Mo: 1, A: 0, P: 0})
+                break
+            case "v3_b":
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 2})
+                break
+            case "v3_c":
+                setWeigths3({G: 0, Mu: 1, D3: 0, R: 1, De: 0, Mo: 0, A: 0, P: 0})
+                break
+            case "v4_a":
+                setWeigths3({G: 2, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 2, P: 0})
+                break
+            case "v4_b":
+                setWeigths3({G: 0, Mu: 0, D3: 2, R: 1, De: 1, Mo: 0, A: 0, P: 0})
+                break
+            case "v5_a":
+                setWeigths3({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 1, A: 2, P: 0})
+                break
+            case "v5_b":
+                setWeigths3({G: 0, Mu: 2, D3: 1, R: 0, De: 1, Mo: 0, A: 0, P: 0})
+                break
+            case "v6_a":
+                setWeigths3({G: -3, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: -2})
+                break
+            case "v6_b":
+                setWeigths3({G: -2, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: -1})
+                break
+            case "v6_c":
+                setWeigths3({G: 2, Mu: 0, D3: 0, R: 0, De: 0, Mo: 0, A: 0, P: 0})
         }
+        setQuestion4(data.Q4.v1)
     }, [answer3]);
 
     useEffect(() => {
-        console.log("answer4", answer4)
-        console.log("weigths", weigths)
+        // console.log("weigths3", weigths3)
+        // console.log("answer4", answer4)
         switch (answer4) {
             case "v1_a":
+                setWeigths4({G: 2, Mu: 2, D3: 2, R: 0, De: 1, Mo: 0, A: 0, P: 0})
+                break
             case "v1_b":
+                setWeigths4({G: 0, Mu: 0, D3: 0, R: 0, De: 0, Mo: 1, A: 1, P: 0})
+                break
             case "v1_c":
-                setQuestion5(data.Q5.v1)
+                setWeigths4({G: 0, Mu: 0, D3: 0, R: 2, De: 0, Mo: 0, A: 0, P: 1})
         }
+        setQuestion5(data.Q5.v1)
     }, [answer4]);
 
     useEffect(() => {
-        console.log("answer5", answer5)
-        console.log("weigths", weigths)
+        // console.log("weigths4", weigths4)
+        // console.log("answer5", answer5)
         switch (answer5) {
             case "v1_a":
+                setWeigths5({G: 0, Mu: 1, D3: 1, R: 0, De: 2, Mo: 0, A: 1, P: 0})
+                break
             case "v1_b":
-                setQuestion6(data.Q6.v1)
+                setWeigths5({G: 2, Mu: 0, D3: 0, R: 1, De: 0, Mo: 1, A: 0, P: 2})
         }
+        setQuestion6(data.Q6.v1)
     }, [answer5]);
 
     useEffect(() => {
-        console.log("answer6", answer6)
-        console.log("weigths", weigths)
+        // console.log("weigths5", weigths5)
+        // console.log("answer6", answer6)
         switch (answer6) {
             case "v1_a":
+                setWeigths6({G: 2, Mu: 1, D3: 0, R: 1, De: 0, Mo: 3, A: 0, P: 0})
+                break
             case "v1_b":
-                setQuestion7(data.Q7.v1)
+                setWeigths6({G: 0, Mu: 0, D3: 1, R: 0, De: 2, Mo: 0, A: 1, P: 2})
         }
+        setQuestion7(data.Q7.v1)
     }, [answer6]);
+
+    useEffect(() => {
+        // console.log("weigths6", weigths6)
+        // console.log("answer7", answer7)
+        let weigths7
+        switch (answer7) {
+            case "v1_a":
+                weigths7 = {G: 0, Mu: 0, D3: 1, R: 0, De: 2, Mo: 0, A: 0, P: 0}
+                break
+            case "v1_b":
+                weigths7 = {G: 0, Mu: 0, D3: 0, R: 1, De: 0, Mo: 0, A: 0, P: 2}
+                break
+            case "v1_c":
+                weigths7 = {G: 3, Mu: 1, D3: 0, R: 0, De: 0, Mo: 2, A: 3, P: 0}
+        }
+
+        // подсчёт баллов
+        let weights = {A: 0, D3: 0, De: 0, G: 0, Mo: 0, Mu: 0, P: 0, R: 0}
+
+        for (let i = 0, arrays = [weigths1, weigths2, weigths3, weigths4, weigths5, weigths6, weigths7]; i < arrays.length; i++) {
+            for (let key in arrays[i]) {
+                weights[key] = parseFloat(weights[key]) + parseFloat(arrays[i][key]);
+            }
+        }
+        console.log(weights);
+
+        // сортировка
+        let keysSorted = Object.keys(weights).sort(function (a, b) {
+            return weights[b] - weights[a]
+        })
+        // console.log(keysSorted);
+        // console.log(keysSorted[0]);
+
+        switch (keysSorted[0]) {
+            case "A":
+                setDirectionMain(dir.Animation)
+                setDirectionRes(dir.Animation_res)
+                break
+            case "D3":
+                setDirectionMain(dir.D3)
+                setDirectionRes(dir.D3_res)
+                break
+            case "De":
+                setDirectionMain(dir.Design)
+                setDirectionRes(dir.Design_res)
+                break
+            case "P":
+                setDirectionMain(dir.Programming)
+                setDirectionRes(dir.Programming_res)
+                break
+            case "Mo":
+                setDirectionMain(dir.Movie)
+                setDirectionRes(dir.Movie_res)
+                break
+            case "G":
+                setDirectionMain(dir.Gamedev)
+                setDirectionRes(dir.Gamedev_res)
+                break
+            case "R":
+                setDirectionMain(dir.Robots)
+                setDirectionRes(dir.Robots_res)
+                break
+            case "Mu":
+                setDirectionMain(dir.Music)
+                setDirectionRes(dir.Music_res)
+        }
+
+    }, [answer7]);
 
     const restart = () => {
         setAnswer1(0)
@@ -213,16 +336,6 @@ const App = () => {
         setQuestion5({})
         setQuestion6({})
         setQuestion7({})
-        weigths = {
-            Gamedev: 0,
-            Music: 0,
-            D3: 0,
-            Robots: 0,
-            Design: 0,
-            Movie: 0,
-            Animation: 0,
-            Programming: 0
-        }
     }
 
     const clearAnswer = (number) => {
@@ -284,7 +397,8 @@ const App = () => {
                                 <Question id={ROUTES.QUESTION7} next={ROUTES.RESULT} prev={ROUTES.QUESTION6} number={7}
                                           go={go} q={question7} answer={answer7} setAnswer={setAnswer7}
                                           clearAnswer={clearAnswer}/>
-                                <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}/>
+                                <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}
+                                        direction={directionMain} directionRes={directionRes}/>
                             </View>
                         </SplitCol>
                     </SplitLayout>

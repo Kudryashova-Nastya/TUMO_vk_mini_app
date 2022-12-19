@@ -154,6 +154,7 @@ h3 {
 .organization {
     color: #F50106;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .button-restart {

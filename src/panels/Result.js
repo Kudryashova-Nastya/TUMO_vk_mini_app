@@ -7,11 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {Div, Group, Panel} from '@vkontakte/vkui';
 
 import './Result.css';
-import * as data from '../data/directions'
 
-const DIRECTION = data.Programming
-const RECOMMENDATIONS_TOP = data.Programming_res.slice(0, 2) // первые 2 топ
-const RECOMMENDATIONS_OTHER = data.Programming_res.slice(2, data.Programming_res.length)
 let pageWidth = document.documentElement.scrollWidth
 console.log(pageWidth)
 
@@ -29,19 +25,23 @@ const settings = {
     pauseOnHover: true
 };
 
-let poster
-if (pageWidth > 590) {
-    poster = {backgroundImage: `url(${DIRECTION.poster_main})`}
-} else if (pageWidth > 390) {
-    poster = {backgroundImage: `url(${DIRECTION.poster_midi})`}
-} else if (pageWidth > 330) {
-    poster = {backgroundImage: `url(${DIRECTION.poster_midi2})`}
-} else {
-    poster = {backgroundImage: `url(${DIRECTION.poster_mini})`}
-}
 
+const Result = ({id, go, routes, restart, direction, directionRes}) => {
+    const DIRECTION = direction
+    const RECOMMENDATIONS_TOP = directionRes.slice(0, 2) // первые 2 топ
+    const RECOMMENDATIONS_OTHER = directionRes.slice(2, directionRes.length)
 
-const Result = ({id, go, routes, restart}) => {
+    let poster
+    if (pageWidth > 590) {
+        poster = {backgroundImage: `url(${DIRECTION.poster_main})`}
+    } else if (pageWidth > 390) {
+        poster = {backgroundImage: `url(${DIRECTION.poster_midi})`}
+    } else if (pageWidth > 330) {
+        poster = {backgroundImage: `url(${DIRECTION.poster_midi2})`}
+    } else {
+        poster = {backgroundImage: `url(${DIRECTION.poster_mini})`}
+    }
+
 
     return (<Panel id={id}>
         <Group className="result_container">
@@ -72,7 +72,7 @@ const Result = ({id, go, routes, restart}) => {
             <Div>
                 <h3>TUMO MOSCOW</h3>
                 <div className="result_text">
-                    <p><a href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app"
+                    <p><a href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app" target="_blank" rel="noreferrer"
                           className="organization">TUMO</a> — международный бренд
                         центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
                         но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного
@@ -111,7 +111,8 @@ const Result = ({id, go, routes, restart}) => {
                    href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">tumo.moscow</a>
             </div>
             <div className="footer_column footer__logo">
-                <a className="footer_link" target="_blank" rel="noreferrer" href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">
+                <a className="footer_link" target="_blank" rel="noreferrer"
+                   href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">
                     <img alt="Лого TUMO"
                          src="https://thumb.tildacdn.com/tild6664-6331-4334-a161-366530316463/-/cover/320x40/center/center/-/format/webp/11799789611339936983.png"/>
                 </a>
