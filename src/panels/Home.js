@@ -13,7 +13,6 @@ import Robo_logo from "../img/Робототехника.svg"
 import D3_logo from "../img/3D.svg"
 
 
-// import poster from "../img/14169919.jpg"
 
 
 const Home = ({id, go, routes}) => (

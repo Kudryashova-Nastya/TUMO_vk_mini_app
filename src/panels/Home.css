@@ -12,6 +12,10 @@ h1 {
     margin: 1em 2.7em;
 }
 
+.vkuiPanel.vkuiPanel--regular .vkuiPanel__in, .vkuiPanel.vkuiPanel--regular::after {
+    background-color: var(--background_content);
+}
+
 .poster {
     width: 100%;
     height: 300px;
