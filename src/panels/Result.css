@@ -74,20 +74,27 @@ h3 {
 }
 
 .button-restart {
-    color: #3939ca;
-    font-weight: 600;
-    font-size: 21px;
-    text-align: center;
+    background-color: #6F5FFE;
+    transition: background-color .15s ease-in-out;
+    align-items: center;
+    border: 0;
+    border-radius: 30px;
     cursor: pointer;
-    transition: .15s ease-in-out;
-    height: 30px;
-    margin: 70px 30px 18px;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    outline: 0;
+    text-align: center;
+    white-space: nowrap;
+    will-change: background-color;
+    color: #fff;
+    margin: 70px 12vw 2vw;
+    font-size: 16px;
+    padding: 13px 0;
 }
 
 .button-restart:hover {
-    color: #5b49fd;
-    font-size: 22px;
-    transition: .15s ease-in-out;
+    background-color: #5b49fd;
 }
 
 
@@ -173,8 +180,16 @@ h3 {
     color: #F50106;
     font-weight: 600;
     text-decoration: none;
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
 }
 
+.link_ico {
+    position: absolute;
+    top: 0;
+    left: 47px;
+}
 
 footer {
     display: flex;

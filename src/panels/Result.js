@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {Div, Group, Panel} from '@vkontakte/vkui';
+import { Icon24ExternalLinkOutline } from '@vkontakte/icons';
 
 import './Result.css';
 
@@ -35,7 +36,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
     let poster
     if (pageWidth > 590) {
         poster = {backgroundImage: `url(${DIRECTION.poster_main})`}
-    // } else if (pageWidth > 390) {
+        // } else if (pageWidth > 390) {
     } else if (pageWidth > 415) {
         poster = {backgroundImage: `url(${DIRECTION.poster_midi})`}
     } else if (pageWidth > 330) {
@@ -47,14 +48,13 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
 
     return (<Panel id={id}>
         <Group className="result_container">
-            <a href={DIRECTION.link} target="_blank" rel="noreferrer">
-                <div className="result_poster" style={poster}></div>
-            </a>
+            <div className="result_poster" style={poster}></div>
             <Div>
                 <div className='direction_text'>{DIRECTION.full}
                 </div>
 
-                <a className='button-link' href="https://vk.com/app6013442_-195122400?form_id=36#form_id=36" target="_blank"
+                <a className='button-link' href="https://vk.com/app6013442_-195122400?form_id=36#form_id=36"
+                   target="_blank"
                    rel="noreferrer">
                     {(pageWidth > 590) ? "Получить бесплатный пробный урок в подарок" : "Бесплатный урок в подарок"}
                 </a>
@@ -64,9 +64,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                 <div className='cards-container'>
                     {RECOMMENDATIONS_TOP.map((p) => (
                         <div key={p.name}>
-                            <a href={p.link} key={p.name} target="_blank" rel="noreferrer">
-                                <img className="rec-poster" src={p.rec_poster_top} alt="постер направления TUMO"/>
-                            </a>
+                            <img className="rec-poster" src={p.rec_poster_top} alt="постер направления TUMO"/>
                         </div>
                     ))}
                 </div>
@@ -75,10 +73,11 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                 <h3>TUMO MOSCOW</h3>
                 <div className="result_text">
                     <p><a href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app" target="_blank" rel="noreferrer"
-                          className="organization">TUMO</a> — международный бренд
-                        центров креативных индустрий для школьников. Первый открылся в Ереване в 2011 году,
-                        но уже в 2016 оказался на первом месте рейтинга инновационных школ мира, составленного
-                        французским журналом «We demain».</p>
+                          className="organization">TUMO
+                        <Icon24ExternalLinkOutline className="link_ico" width={12} height={12}/></a>
+                         — международный бренд центров креативных индустрий для школьников. Первый открылся в Ереване в
+                        2011 году, но уже в 2016 оказался на первом месте рейтинга инновационных школ мира,
+                        составленного французским журналом «We demain».</p>
 
                     <p>На сегодняшний день 17 школ TUMO, помимо нескольких городов Армении, уже работают во Франции,
                         Швейцарии, Германии, Албании, Ливане и скоро откроются в Южной Корее и США.</p>
@@ -91,9 +90,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                 <br/>
                 <Slider {...settings}>
                     {RECOMMENDATIONS_OTHER.map((p) => (
-                        <a href={p.link} key={p.name} target="_blank" rel="noreferrer">
-                            <img className="school-photo" src={p.rec_poster_other} alt="фото других направлений TUMO"/>
-                        </a>
+                        <img className="school-photo" src={p.rec_poster_other} alt="фото других направлений TUMO"/>
                     ))}
                 </Slider>
                 <div className='button-restart' onClick={() => {
