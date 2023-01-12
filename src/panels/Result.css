@@ -223,12 +223,17 @@ footer {
     color: #F50106;
 }
 
+.slick-next {
+     right: -25px;
+     visibility: hidden;
+}
 
 @media screen and (min-width: 590px) {
     .slick-next {
         top: 230px;
         right: 41vw;
         z-index: 1000;
+        visibility: visible;
     }
 
     .slick-prev:before, .slick-next:before {
