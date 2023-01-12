@@ -6,10 +6,10 @@ import {Group, Panel, PanelHeader, PanelHeaderBack, Radio, RadioGroup} from '@vk
 import './Question.css';
 
 
-const Question = ({id, next, prev, number, go, q, answer, setAnswer, clearAnswer}) => (
+const Question = ({id, next, number, go, q, answer, setAnswer, clearAnswer}) => (
     <Panel id={id}>
         <PanelHeader separator={false}
-                     left={<PanelHeaderBack onClick={() => {go(prev); clearAnswer(number)}} data-to="home"/>}
+                     left={<PanelHeaderBack onClick={() => {window.history.back(); clearAnswer(number)}} data-to="home"/>}
         >
             Вопрос {number} из 7
         </PanelHeader>

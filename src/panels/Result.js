@@ -47,7 +47,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
 
 
     return (<Panel id={id}>
-        <Group className="result_container">
+        <Group>
             <div className="result_poster" style={poster}></div>
             <Div>
                 <div className='direction_text'>{DIRECTION.full}
