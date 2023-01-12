@@ -32,8 +32,21 @@ const ROUTES = {
 const App = () => {
     const [scheme, setScheme] = useState('bright_light')
     const [activePanel, setActivePanel] = useState(ROUTES.HOME); // главная стр
+    const [history, setHistory] = useState(['home']) // Заносим начальную панель в массив историй.
+
+    const goBack = () => {
+        if( history.length === 1 ) {  // Если в массиве одно значение:
+            bridge.send("VKWebAppClose", {"status": "success"}); // Отправляем bridge на закрытие сервиса.
+        } else if( history.length > 1 ) { // Если в массиве больше одного значения:
+            history.pop() // удаляем последний элемент в массиве.
+            setActivePanel( history[history.length - 1] ) // Изменяем массив с иcторией и меняем активную панель.
+        }
+    }
+
+
 
     useEffect(() => {
+        window.addEventListener('popstate', () => goBack());
         bridge.subscribe(({detail: {type, data}}) => {
             if (type === 'VKWebAppUpdateConfig') {
                 setScheme(data.scheme)
@@ -44,8 +57,11 @@ const App = () => {
     // const go = e => {
     // 	setActivePanel(e.currentTarget.dataset.to);
     // };
-    const go = panel => {
-        setActivePanel(panel);
+
+    const go = name => { // В качестве аргумента принимаем id панели для перехода
+        window.history.pushState( {panel: name}, name ); // Создаём новую запись в истории браузера
+        setActivePanel(name); // Меняем активную панель
+        history.push( name ); // Добавляем панель в историю
     };
 
     // логика вопросов
@@ -364,37 +380,35 @@ const App = () => {
     }
 
     return (
-        <ConfigProvider scheme={scheme}>
+        <ConfigProvider isWebView={true} scheme={scheme}>
             <AdaptivityProvider>
                 <AppRoot>
                     <SplitLayout popout={false}>
                         <SplitCol>
-                            <View activePanel={activePanel}>
+                            <View activePanel={activePanel} // Активная панель равная стейту
+                                  history={history} // Ставим историю из массива панелей
+                                  onSwipeBack={goBack} // При свайпе выполняется данная функция
+                                >
                                 <Home id={ROUTES.HOME} go={go} routes={ROUTES}/>
-                                <Question id={ROUTES.QUESTION1} next={ROUTES.QUESTION2} prev={ROUTES.HOME} number={1}
+                                <Question id={ROUTES.QUESTION1} next={ROUTES.QUESTION2} number={1}
                                           go={go} q={data.Q1} answer={answer1} setAnswer={setAnswer1}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION2} next={ROUTES.QUESTION3} prev={ROUTES.QUESTION1}
-                                          number={2}
+                                <Question id={ROUTES.QUESTION2} next={ROUTES.QUESTION3}                                          number={2}
                                           go={go} q={question2} answer={answer2} setAnswer={setAnswer2}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION3} next={ROUTES.QUESTION4} prev={ROUTES.QUESTION2}
-                                          number={3}
+                                <Question id={ROUTES.QUESTION3} next={ROUTES.QUESTION4}                                          number={3}
                                           go={go} q={question3} answer={answer3} setAnswer={setAnswer3}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION4} next={ROUTES.QUESTION5} prev={ROUTES.QUESTION3}
-                                          number={4}
+                                <Question id={ROUTES.QUESTION4} next={ROUTES.QUESTION5}                                          number={4}
                                           go={go} q={question4} answer={answer4} setAnswer={setAnswer4}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION5} next={ROUTES.QUESTION6} prev={ROUTES.QUESTION4}
-                                          number={5}
+                                <Question id={ROUTES.QUESTION5} next={ROUTES.QUESTION6}                                          number={5}
                                           go={go} q={question5} answer={answer5} setAnswer={setAnswer5}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION6} next={ROUTES.QUESTION7} prev={ROUTES.QUESTION5}
-                                          number={6}
+                                <Question id={ROUTES.QUESTION6} next={ROUTES.QUESTION7}                                          number={6}
                                           go={go} q={question6} answer={answer6} setAnswer={setAnswer6}
                                           clearAnswer={clearAnswer}/>
-                                <Question id={ROUTES.QUESTION7} next={ROUTES.RESULT} prev={ROUTES.QUESTION6} number={7}
+                                <Question id={ROUTES.QUESTION7} next={ROUTES.RESULT} number={7}
                                           go={go} q={question7} answer={answer7} setAnswer={setAnswer7}
                                           clearAnswer={clearAnswer}/>
                                 <Result id={ROUTES.RESULT} go={go} routes={ROUTES} restart={restart}
