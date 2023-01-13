@@ -230,7 +230,11 @@ footer {
 
 .slick-next {
      right: -25px;
-     visibility: hidden;
+    display: none !important;
+}
+
+.slick-prev {
+    display: none !important;
 }
 
 @media screen and (min-width: 590px) {
@@ -238,7 +242,7 @@ footer {
         top: 230px;
         right: 41vw;
         z-index: 1000;
-        visibility: visible;
+        display: block !important;
     }
 
     .slick-prev:before, .slick-next:before {
@@ -255,5 +259,6 @@ footer {
         top: 230px;
         left: 41vw;
         z-index: 1000;
+        display: block !important;
     }
 }

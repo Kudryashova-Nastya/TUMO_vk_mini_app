@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import {Div, Group, Panel} from '@vkontakte/vkui';
-import { Icon24ExternalLinkOutline } from '@vkontakte/icons';
+import {Icon24ExternalLinkOutline} from '@vkontakte/icons';
 
 import './Result.css';
 
@@ -75,7 +75,7 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                     <p><a href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app" target="_blank" rel="noreferrer"
                           className="organization">TUMO
                         <Icon24ExternalLinkOutline className="link_ico" width={12} height={12}/></a>
-                         — международный бренд центров креативных индустрий для школьников. Первый открылся в Ереване в
+                        — международный бренд центров креативных индустрий для школьников. Первый открылся в Ереване в
                         2011 году, но уже в 2016 оказался на первом месте рейтинга инновационных школ мира,
                         составленного французским журналом «We demain».</p>
 
@@ -104,8 +104,10 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
         </Group>
         <footer>
             <div className="footer_column footer__text">
-                <a className="footer_link" target="_blank" rel="noreferrer" href="tel: +7(495)646-02-73">+7 (495)
-                    646-02-73</a><br/>
+                {(pageWidth > 780) ? <span className="footer_link">+7 (495) 646-02-73</span> :
+                    <a className="footer_link" target="_blank" rel="noreferrer" href="tel: +7(495)646-02-73">
+                        +7 (495) 646-02-73 </a>}
+                <br/>
                 <a className="footer_link" target="_blank" rel="noreferrer"
                    href="https://tumo.moscow/?utm_source=vk&utm_medium=mini_app">tumo.moscow</a>
             </div>
