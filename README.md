@@ -1,9 +1,9 @@
-## Бесплатный тест для родителей от специалистов школы креативного образования TUMO
-![image](https://user-images.githubusercontent.com/56070980/217041862-fb60b3ce-aa74-478b-b9b6-b05f899a414d.png)
+### Бесплатный тест для родителей от специалистов школы креативного образования TUMO
+[<img width="800" src="https://user-images.githubusercontent.com/56070980/217041862-fb60b3ce-aa74-478b-b9b6-b05f899a414d.png">](https://user-images.githubusercontent.com/56070980/217041862-fb60b3ce-aa74-478b-b9b6-b05f899a414d.png)
 
-[<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
+[<img width="114" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
 
-## Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
+### Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
 
 ### How to use
 
