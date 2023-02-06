@@ -71,12 +71,8 @@ h3 {
 
 .rec-poster {
     width: 100%;
-    image-rendering:-moz-crisp-edges;          /* Firefox        */
-    image-rendering:-o-crisp-edges;            /* Opera          */
-    image-rendering:-webkit-optimize-contrast; /* Safari         */
-    image-rendering:optimize-contrast;         /* CSS3 Proposed  */
-    -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
-}
+    max-width: 340px;
+   }
 
 .button-restart {
     background-color: #6F5FFE;

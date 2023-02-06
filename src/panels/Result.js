@@ -90,7 +90,9 @@ const Result = ({id, go, routes, restart, direction, directionRes}) => {
                 <br/>
                 <Slider {...settings}>
                     {RECOMMENDATIONS_OTHER.map((p) => (
-                        <img className="school-photo" src={p.rec_poster_other} alt="фото других направлений TUMO"/>
+                        <div>
+                            <img className="school-photo" src={p.rec_poster_other} alt="фото других направлений TUMO"/>
+                        </div>
                     ))}
                 </Slider>
                 <div className='button-restart' onClick={() => {
