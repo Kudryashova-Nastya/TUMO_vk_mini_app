@@ -1,10 +1,13 @@
+## Бесплатный тест для родителей от специалистов школы креативного образования TUMO
+![image](https://user-images.githubusercontent.com/56070980/217041862-fb60b3ce-aa74-478b-b9b6-b05f899a414d.png)
+
 [<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
 
-# Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
+## Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
 
-## How to use
+### How to use
 
-### With NPX
+#### With NPX
 
 ```bash
 npx @vkontakte/create-vk-mini-app [app-directory-name] [options]
@@ -29,7 +32,7 @@ create-vk-mini-app [app-directory-name] [options]
 
 This way is less recommended because you will have to update the package yourself.
 
-### Options
+#### Options
 Without `--zeit` and `--surge` options 
 
 #### `--zeit`
@@ -45,7 +48,7 @@ Firstly, you have to create Surge account and Surge-domain on [surge.sh](https:/
 #### `--help`
 Prints the synopsis and a list of options
 
-## How to start work with app
+### How to start work with app
 
 Go to created folder and run:  
 `yarn start` or  `npm start` to start dev server with hot reload on `localhost:10888`.
